@@ -9,8 +9,8 @@ The dataset is FER2013, you could find it here: https://www.kaggle.com/c/challen
 Image Properties: 48 x 48 pixels (2304 bytes) labels: 0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral The training set consists of 28,709 examples. The public test set consists of 3,589 examples. The private test set consists of another 3,589 examples.
 
 ### Demos
-![Image text](https://github.com/Wasabi111/Facial_expression_recognition_DeepCNN/images/1.png)
-![Image text](https://github.com/Wasabi111/Facial_expression_recognition_DeepCNN/images/2.png)
+![](images/1.png)
+![](images/2.png)
 
 ### Dependencies
 
@@ -20,7 +20,7 @@ Image Properties: 48 x 48 pixels (2304 bytes) labels: 0=Angry, 1=Disgust, 2=Fear
 * sklearn (plot confusion matrix)
 However it seems that python >= 3 still works, but you need to change some code.
 
-### Example usage
+### Example Usage
 
 0. Preprocess FER2013 dataset
 Put FER2013 to data folder and then:
@@ -80,33 +80,31 @@ extract code: uwd5
 
 Network Slimming is a neural network training scheme that can simultaneously reduce the model size, run-time memory, computing operations, while introducing no accuracy loss to and minimum overhead to the training process. The resulting models require no special libraries/hardware for efficient inference.
 
-
-## Example Usage
+### Example Usage
   
 This repo holds the example code for VGGNet.
 
 0. Prepare the directories to save the results
-
-1. Train vgg network with channel level sparsity, S is the lambda in the paper which controls the significance of sparsity
-
-```
-th main.lua -netType vgg -save vgg_cifar10/ -S 0.0001
-```
- 2. Identify a certain percentage of relatively unimportant channels and set their scaling factors to 0
+1. Identify a certain percentage of relatively unimportant channels and set their scaling factors to 0
 
 ```
-th prune/prune.lua -percent 0.7 -model vgg_cifar10/model_160.t7  -save vgg_cifar10/pruned/model_160_0.7.t7
+python prune_vgg.py --percent 0.5 --model [model path] --save [save path] 
 ```
- 3. Re-build a real compact network and copy the weights from the model in the last stage
+2. Fine-tune the compact network
+Make sure the save path is correct.
+```
+python fer_vgg_prune.py
+```
 
-```
-th convert/vgg.lua -model vgg_cifar10/pruned/model_160_0.7.t7 -save vgg_cifar10/converted/model_160_0.7.t7
-```
- 4. Fine-tune the compact network
- 
-```
-th main_fine_tune.lua -retrain vgg_cifar10/converted/model_160_0.7.t7 -save vgg_cifar10/fine_tune/
-```
+### Prune Results
+![](images/compare.jpg)
+
+fer2013 Accurary             
+
+- Model：    VGG19 ;       PublicTest_acc：  72.124% ;     PrivateTest_acc：72.500%     
+
+The size is 5 times smaller, while the accuracy only drops 0.5%.
+
 ## Reference
 * [Learning Efficient Convolutional Networks through Network Slimming](http://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Learning_Efficient_Convolutional_ICCV_2017_paper.pdf) (ICCV 2017).
 
