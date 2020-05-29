@@ -8,6 +8,10 @@ The dataset is FER2013, you could find it here: https://www.kaggle.com/c/challen
 
 Image Properties: 48 x 48 pixels (2304 bytes) labels: 0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral The training set consists of 28,709 examples. The public test set consists of 3,589 examples. The private test set consists of another 3,589 examples.
 
+### Demos
+![Image text](https://github.com/Wasabi111/Facial_expression_recognition_DeepCNN/images/1.png)
+![Image text](https://github.com/Wasabi111/Facial_expression_recognition_DeepCNN/images/2.png)
+
 ### Dependencies
 
 * Python 2.7
@@ -42,7 +46,7 @@ Make sure batch size and net is the same.
 python plot_fer2013_confusion_matrix.py --model VGG19 --split PrivateTest
 ```
 3. Results
-* fer2013 Accurary             
+fer2013 Accurary             
 
 - Model：    VGG19 ;       PublicTest_acc：  72.596% ;     PrivateTest_acc：73.212%     <Br/>
 - Model：   Resnet18 ;     PublicTest_acc：  72.290% ;    PrivateTest_acc：72.975%  
@@ -62,6 +66,11 @@ By the way this code could process CK+ dataset too. If you want to do that:
 ```
 - python plot_CK+_confusion_matrix.py --model VGG19
 ```
+3. Results
+CK+ Accurary
+- Model：    VGG19 ;       Test_acc：   94.646%   <Br/>
+- Model：   Resnet18 ;     Test_acc：   94.040%   
+
 CK+ could be found here: https://pan.baidu.com/s/1ytIBzIAKpKbfI6mstYZNvQ 
 extract code: uwd5
 
