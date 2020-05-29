@@ -97,7 +97,7 @@ python fer_vgg_prune.py
 ```
 
 ### Prune Results
-![](images/compare.jpg)
+![](images/compare.png)
 
 fer2013 Accurary             
 
