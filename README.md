@@ -36,24 +36,29 @@ python mainpro_FER.py --model Resnet18 --bs 128 --lr 0.01
 ```
 if you prefer Resnet.
 
-2.Plot confusion matrix
+2. Plot confusion matrix
 Make sure batch size and net is the same.
 ```
 python plot_fer2013_confusion_matrix.py --model VGG19 --split PrivateTest
 ```
+3. Results
+* fer2013 Accurary             
+
+- Model：    VGG19 ;       PublicTest_acc：  72.596% ;     PrivateTest_acc：73.212%     <Br/>
+- Model：   Resnet18 ;     PublicTest_acc：  72.290% ;    PrivateTest_acc：72.975%  
 
 
 By the way this code could process CK+ dataset too. If you want to do that:
 
-### Train and Eval model for a fold ###
+0. Train and Eval model for a fold
 ```
 - python mainpro_CK+.py --model VGG19 --bs 128 --lr 0.01 --fold 1
 ```
-### Train and Eval model for all 10 fold ###
+1. Train and Eval model for all 10 fold
 ```
 - python k_fold_train.py
 ```
-### plot confusion matrix for all fold ###
+2. plot confusion matrix for all fold
 ```
 - python plot_CK+_confusion_matrix.py --model VGG19
 ```
