@@ -9,3 +9,8 @@ https://github.com/TadasBaltrusaitis/OpenFace
 
 OpenFace software provides action units detection and it could be used in real-time senarios. 
 
+It also provides action unit informations.
+
+## SVM
+
+
