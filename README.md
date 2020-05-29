@@ -56,15 +56,15 @@ By the way this code could process CK+ dataset too. If you want to do that:
 
 0. Train and Eval model for a fold
 ```
-- python mainpro_CK+.py --model VGG19 --bs 128 --lr 0.01 --fold 1
+python mainpro_CK+.py --model VGG19 --bs 128 --lr 0.01 --fold 1
 ```
 1. Train and Eval model for all 10 fold
 ```
-- python k_fold_train.py
+python k_fold_train.py
 ```
 2. plot confusion matrix for all fold
 ```
-- python plot_CK+_confusion_matrix.py --model VGG19
+python plot_CK+_confusion_matrix.py --model VGG19
 ```
 3. Results
 CK+ Accurary
@@ -107,10 +107,6 @@ The size is 5 times smaller, while the accuracy only drops 0.5%.
 
 ## Reference
 * [Learning Efficient Convolutional Networks through Network Slimming](http://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Learning_Efficient_Convolutional_ICCV_2017_paper.pdf) (ICCV 2017).
-
-* [Zhuang Liu](https://liuzhuang13.github.io/), [Jianguo Li](https://sites.google.com/site/leeplus/), [Zhiqiang Shen](http://zhiqiangshen.com), [Gao Huang](http://www.cs.cornell.edu/~gaohuang/), [Shoumeng Yan](https://scholar.google.com/citations?user=f0BtDUQAAAAJ&hl=en), [Changshui Zhang](http://bigeye.au.tsinghua.edu.cn/english/Introduction.html).
-
-* Liu, Zhuang and Li, Jianguo and Shen, Zhiqiang and Huang, Gao and Yan, Shoumeng and Zhang, Changshui, Learning Efficient Convolutional Networks through Network Slimming，ICCV 2017
 
 
 
